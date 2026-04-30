@@ -6,6 +6,65 @@ function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 }
 
+// Static mobile placeholder inside browser mockup
+function MobileMockupContent() {
+  return (
+    <div
+      className="w-full h-[280px] flex flex-col"
+      style={{
+        background:
+          "linear-gradient(135deg, oklch(0.18 0.02 260) 0%, oklch(0.22 0.03 280) 100%)",
+      }}
+    >
+      {/* Nav bar line */}
+      <div className="h-8 border-b border-border/20 flex items-center px-4 gap-2">
+        <div className="w-16 h-2 rounded bg-primary/30" />
+        <div className="flex-1" />
+        <div className="w-8 h-2 rounded bg-muted/40" />
+        <div className="w-8 h-2 rounded bg-muted/40" />
+        <div className="w-8 h-2 rounded bg-muted/40" />
+      </div>
+      {/* Hero area */}
+      <div className="flex-1 flex flex-col items-center justify-center gap-4 px-8 text-center">
+        <div
+          className="text-2xl font-bold font-display bg-clip-text text-transparent"
+          style={{
+            backgroundImage:
+              "linear-gradient(135deg, oklch(0.80 0.24 260), oklch(0.82 0.22 290))",
+          }}
+        >
+          webwhistl.com
+        </div>
+        <div className="space-y-2 w-full max-w-xs">
+          <div className="h-2 rounded bg-muted/30 w-3/4 mx-auto" />
+          <div className="h-2 rounded bg-muted/20 w-1/2 mx-auto" />
+        </div>
+        <div
+          className="mt-2 px-4 py-2 rounded-lg text-xs font-semibold text-white"
+          style={{
+            background:
+              "linear-gradient(135deg, oklch(0.70 0.24 260), oklch(0.75 0.22 290))",
+          }}
+        >
+          View Live Site
+        </div>
+      </div>
+      {/* Footer cards */}
+      <div className="grid grid-cols-3 gap-2 px-4 pb-4">
+        {["50+ Projects", "5 Countries", "24/7 Support"].map((label) => (
+          <div
+            key={label}
+            className="rounded-lg p-2 text-center border border-border/20"
+            style={{ background: "oklch(0.22 0.02 260 / 0.6)" }}
+          >
+            <div className="text-[10px] text-muted-foreground">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Hero() {
   return (
     <section
@@ -141,14 +200,20 @@ export default function Hero() {
                 </span>
               </div>
             </div>
-            {/* Live iframe preview */}
-            <iframe
-              src="https://webwhistl.com"
-              title="WebWhistl Dashboard"
-              className="w-full h-[500px] block border-0"
-              scrolling="no"
-              style={{ overflow: "hidden" }}
-            />
+
+            {/* Desktop: live iframe — Mobile: static placeholder */}
+            <div className="hidden lg:block">
+              <iframe
+                src="https://webwhistl.com"
+                title="WebWhistl Dashboard"
+                className="w-full h-[500px] block border-0"
+                scrolling="no"
+                style={{ overflow: "hidden" }}
+              />
+            </div>
+            <div className="block lg:hidden">
+              <MobileMockupContent />
+            </div>
           </div>
         </motion.div>
 

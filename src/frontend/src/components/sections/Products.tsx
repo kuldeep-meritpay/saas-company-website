@@ -2,6 +2,7 @@ import {
   ArrowRight,
   Building2,
   CheckCircle2,
+  ExternalLink,
   Plane,
   ShoppingCart,
 } from "lucide-react";
@@ -11,6 +12,7 @@ import { SECTION_IDS } from "../../lib/constants";
 interface Product {
   icon: React.ElementType;
   title: string;
+  tagline: string;
   description: string;
   features: string[];
   gradient: string;
@@ -22,8 +24,9 @@ const PRODUCTS: Product[] = [
   {
     icon: ShoppingCart,
     title: "E-commerce SaaS Apps",
+    tagline: "Power your store with real-time analytics and smart automation",
     description:
-      "Supercharge your e-commerce operations with apps built natively for Shopify, BigCommerce, and Wix. From real-time bidding systems to advanced analytics, we build the tools that move product.",
+      "Supercharge your e-commerce operations with apps built natively for Shopify, BigCommerce, and Wix. From real-time bidding to advanced analytics, we build the tools that move product.",
     features: [
       "Online Auction System",
       "Real-time Bidding Engine",
@@ -40,8 +43,9 @@ const PRODUCTS: Product[] = [
   {
     icon: Building2,
     title: "PG Management System",
+    tagline: "From rent collection to maintenance — all in one platform",
     description:
-      "A comprehensive role-based platform for property and PG (paying guest) businesses to manage tenants, staff, finances, and operations from a single mobile-first app.",
+      "A comprehensive role-based platform for property and PG businesses to manage tenants, staff, finances, and operations from a single mobile-first app.",
     features: [
       "Complaint Management",
       "Rent Management & Tracking",
@@ -58,6 +62,7 @@ const PRODUCTS: Product[] = [
   {
     icon: Plane,
     title: "Travel Management System",
+    tagline: "Unified booking engine for hotels, flights, and buses",
     description:
       "A unified travel booking and management platform with real-time availability, multi-vendor support, and a powerful admin dashboard for travel agencies and operators.",
     features: [
@@ -110,6 +115,7 @@ export default function Products() {
               {
                 icon: Icon,
                 title,
+                tagline,
                 description,
                 features,
                 gradient,
@@ -129,10 +135,9 @@ export default function Products() {
               >
                 {/* Card gradient header */}
                 <div
-                  className="relative p-6 pb-8"
+                  className="relative p-6 pb-5"
                   style={{ background: gradient }}
                 >
-                  {/* Decorative circles */}
                   <div
                     className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-20 blur-2xl"
                     style={{ background: badgeColor }}
@@ -158,17 +163,23 @@ export default function Products() {
                       {badge}
                     </span>
                   </div>
-                  <h3 className="font-display font-bold text-xl text-foreground mb-2">
+                  <h3 className="font-display font-bold text-xl text-foreground mb-1">
                     {title}
                   </h3>
+                  <p
+                    className="text-xs font-semibold mb-2"
+                    style={{ color: badgeColor }}
+                  >
+                    {tagline}
+                  </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {description}
                   </p>
                 </div>
 
                 {/* Features list */}
-                <div className="flex-1 p-6 bg-card/60">
-                  <ul className="space-y-2.5 mb-6">
+                <div className="flex-1 p-6 bg-card/60 flex flex-col">
+                  <ul className="space-y-2.5 mb-6 flex-1">
                     {features.map((f) => (
                       <li
                         key={f}
@@ -185,16 +196,23 @@ export default function Products() {
 
                   <button
                     type="button"
-                    data-ocid={`products.learn_more_button.${i + 1}`}
+                    data-ocid={`products.view_demo_button.${i + 1}`}
                     onClick={() =>
                       document
                         .getElementById(SECTION_IDS.CONTACT)
                         ?.scrollIntoView({ behavior: "smooth" })
                     }
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold transition-smooth group-hover:gap-2.5"
-                    style={{ color: badgeColor }}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-smooth hover:scale-[1.03] hover:shadow-elevated"
+                    style={{
+                      background: `linear-gradient(135deg, ${badgeColor}, ${badgeColor}bb)`,
+                    }}
                   >
-                    Learn More <ArrowRight size={15} />
+                    <ExternalLink size={14} />
+                    See Demo
+                    <ArrowRight
+                      size={14}
+                      className="opacity-70 group-hover:translate-x-0.5 transition-transform duration-200"
+                    />
                   </button>
                 </div>
               </motion.div>

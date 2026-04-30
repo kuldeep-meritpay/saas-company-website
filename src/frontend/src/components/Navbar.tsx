@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { Menu, Moon, Sun, X, Zap } from "lucide-react";
+import { CalendarDays, Menu, Moon, Sun, X, Zap } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -18,7 +18,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on resize to desktop
   useEffect(() => {
     if (!isMobile) setMenuOpen(false);
   }, [isMobile]);
@@ -37,11 +36,19 @@ export function Navbar() {
     <header
       data-ocid="navbar"
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-3 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "glass-blur shadow-elevated"
-          : "bg-background/60 backdrop-blur-sm",
+          ? "top-0 glass-blur shadow-elevated border-b border-border/30"
+          : "bg-transparent",
       )}
+      style={
+        scrolled
+          ? {
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+            }
+          : undefined
+      }
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -96,13 +103,24 @@ export function Navbar() {
             </Button>
 
             {!isMobile && (
-              <Button
-                data-ocid="navbar.cta_button"
-                onClick={() => scrollToSection("contact")}
-                className="btn-primary-gradient px-5 h-9 text-sm font-semibold rounded-lg text-white border-0"
-              >
-                Get Started
-              </Button>
+              <>
+                <Button
+                  data-ocid="navbar.book_demo_button"
+                  onClick={() => scrollToSection("contact")}
+                  variant="outline"
+                  className="h-9 px-4 text-sm font-semibold rounded-lg border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/70 transition-smooth"
+                >
+                  <CalendarDays className="w-3.5 h-3.5 mr-1.5" />
+                  Book a Demo
+                </Button>
+                <Button
+                  data-ocid="navbar.cta_button"
+                  onClick={() => scrollToSection("contact")}
+                  className="btn-primary-gradient px-5 h-9 text-sm font-semibold rounded-lg text-white border-0"
+                >
+                  Get Started
+                </Button>
+              </>
             )}
 
             {/* Hamburger */}
@@ -145,13 +163,23 @@ export function Navbar() {
                 {link.label}
               </button>
             ))}
-            <Button
-              data-ocid="navbar.mobile_cta_button"
-              onClick={() => scrollToSection("contact")}
-              className="btn-primary-gradient mt-2 w-full text-sm font-semibold rounded-lg text-white border-0"
-            >
-              Get Started
-            </Button>
+            <div className="flex gap-2 mt-2">
+              <Button
+                data-ocid="navbar.mobile_book_demo_button"
+                onClick={() => scrollToSection("contact")}
+                variant="outline"
+                className="flex-1 text-sm font-semibold rounded-lg border-primary/40 text-primary"
+              >
+                Book a Demo
+              </Button>
+              <Button
+                data-ocid="navbar.mobile_cta_button"
+                onClick={() => scrollToSection("contact")}
+                className="flex-1 btn-primary-gradient text-sm font-semibold rounded-lg text-white border-0"
+              >
+                Get Started
+              </Button>
+            </div>
           </nav>
         </div>
       )}
