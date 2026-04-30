@@ -1,0 +1,27 @@
+{
+  "overview": "A modern, high-conversion SaaS technology company website for a tech solutions provider specializing in scalable SaaS applications. Features a hero section, services overview, detailed product showcases (E-commerce, PG Management, Travel), testimonials, tech stack, and contact form — with dark/light mode, glassmorphism cards, and electric blue/purple gradient accents.",
+  "features": [
+    "Hero section with animated gradient background and dual CTAs",
+    "Services overview with glassmorphism cards",
+    "3 product solution showcases (E-commerce, PG Management, Travel)",
+    "Why Choose Us value props",
+    "Tech stack badge grid",
+    "Testimonials carousel",
+    "Contact form with validation",
+    "Dark/light mode toggle",
+    "Fully responsive design",
+    "Smooth scroll animations and micro-interactions"
+  ],
+  "category": "marketing-website",
+  "tags": [
+    "saas",
+    "landing-page",
+    "dark-mode",
+    "glassmorphism",
+    "animations",
+    "responsive",
+    "conversion",
+    "tech-company"
+  ],
+  "last_updated": "2026-04-28T08:57:12.747Z"
+}
