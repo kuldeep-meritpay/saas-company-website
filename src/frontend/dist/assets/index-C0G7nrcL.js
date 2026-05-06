@@ -30404,7 +30404,7 @@ function AboutUs() {
       id: "about",
       "data-ocid": "about.section",
       className: "py-24 bg-background",
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center", children: [
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-start", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           motion.div,
           {
@@ -30415,7 +30415,7 @@ function AboutUs() {
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/8 text-primary text-xs font-semibold uppercase tracking-widest mb-6", children: "Who We Are" }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-bold text-4xl sm:text-5xl text-foreground mb-6 leading-tight", children: [
-                "Built to Scale Your",
+                "A Team That Builds",
                 " ",
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "span",
@@ -30424,11 +30424,13 @@ function AboutUs() {
                     style: {
                       backgroundImage: "linear-gradient(135deg, oklch(0.70 0.24 260), oklch(0.75 0.22 290))"
                     },
-                    children: "Digital Vision"
+                    children: "What You Actually Need"
                   }
                 )
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-muted-foreground leading-relaxed mb-5", children: "Founded in 2020, WebWhistl has grown from a 2-person startup to a 25+ member team of engineers, designers, and product strategists — all united by one mission." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-muted-foreground leading-relaxed mb-5", children: "Founded in 2020 out of a frustration with bloated off-the-shelf software, WebWhistl was built on a simple belief: businesses deserve custom-engineered solutions that actually fit their operations — not the other way around." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base text-muted-foreground leading-relaxed mb-5", children: "Today, we're a 25+ member team of full-stack engineers, AI/ML specialists, UX designers, and DevOps engineers with deep domain expertise across e-commerce, property management, and travel. We've shipped SaaS products for Shopify and BigCommerce merchants, PG management platforms handling thousands of tenants, and unified travel booking systems with real-time hotel, flight, and bus availability." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base text-muted-foreground leading-relaxed mb-8", children: "What makes us different isn't just our tech stack — it's the way we work. We move fast without cutting corners, embed ourselves in your business context, and own outcomes rather than just deliverables. From a raw idea to a production-grade SaaS platform, we handle the full journey." }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "blockquote",
                 {
@@ -30437,14 +30439,28 @@ function AboutUs() {
                     borderColor: "oklch(0.70 0.24 260)",
                     background: "oklch(0.70 0.24 260 / 0.06)"
                   },
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base font-semibold italic text-foreground/90", children: '"We build scalable SaaS solutions that help businesses grow faster in the digital age."' })
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base font-semibold italic text-foreground/90", children: "“We don’t build generic software. We build the exact tool your business needs to scale — architected for today, engineered for tomorrow.”" })
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base text-muted-foreground leading-relaxed", children: "We specialize in custom software for e-commerce, property management, travel, and AI-powered systems — building platforms that are fast to ship, easy to maintain, and designed to scale with your business." })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2 mt-6", children: [
+                "E-commerce SaaS",
+                "AI & RAG Systems",
+                "Property Tech",
+                "Travel Platforms",
+                "Cloud-Native Apps",
+                "Mobile Development"
+              ].map((tag) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: "px-3 py-1 rounded-full text-xs font-semibold border border-border/60 bg-muted/50 text-foreground/70",
+                  children: tag
+                },
+                tag
+              )) })
             ]
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
           motion.div,
           {
             initial: { opacity: 0, x: 32 },
@@ -30452,53 +30468,84 @@ function AboutUs() {
             viewport: { once: true },
             transition: { duration: 0.6, delay: 0.15 },
             className: "grid grid-cols-2 gap-5",
-            children: STATS.map(({ icon: Icon2, value, suffix: suffix2, label, color: color2 }, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              motion.div,
-              {
-                "data-ocid": `about.stat.${i + 1}`,
-                initial: { opacity: 0, y: 20, scale: 0.95 },
-                whileInView: { opacity: 1, y: 0, scale: 1 },
-                viewport: { once: true },
-                transition: { duration: 0.5, delay: 0.2 + i * 0.1 },
-                className: "group relative p-6 rounded-2xl border border-border/50 glass-blur hover:scale-[1.03] hover:shadow-glass transition-smooth",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "div",
-                    {
-                      className: "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-smooth",
-                      style: {
-                        background: `radial-gradient(ellipse at top left, ${color2}12 0%, transparent 60%)`
-                      }
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+            children: [
+              STATS.map(({ icon: Icon2, value, suffix: suffix2, label, color: color2 }, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                motion.div,
+                {
+                  "data-ocid": `about.stat.${i + 1}`,
+                  initial: { opacity: 0, y: 20, scale: 0.95 },
+                  whileInView: { opacity: 1, y: 0, scale: 1 },
+                  viewport: { once: true },
+                  transition: { duration: 0.5, delay: 0.2 + i * 0.1 },
+                  className: "group relative p-6 rounded-2xl border border-border/50 glass-blur hover:scale-[1.03] hover:shadow-glass transition-smooth",
+                  children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: "w-10 h-10 rounded-xl flex items-center justify-center mb-4",
+                        className: "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-smooth",
                         style: {
-                          background: `linear-gradient(135deg, ${color2}25, ${color2}10)`,
-                          border: `1px solid ${color2}30`
-                        },
-                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { size: 18, style: { color: color2 } })
+                          background: `radial-gradient(ellipse at top left, ${color2}12 0%, transparent 60%)`
+                        }
                       }
                     ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "div",
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "w-10 h-10 rounded-xl flex items-center justify-center mb-4",
+                          style: {
+                            background: `linear-gradient(135deg, ${color2}25, ${color2}10)`,
+                            border: `1px solid ${color2}30`
+                          },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { size: 18, style: { color: color2 } })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "font-display font-bold text-4xl mb-1",
+                          style: { color: color2 },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatedCounter, { target: value, suffix: suffix2 })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground font-medium", children: label })
+                    ] })
+                  ]
+                },
+                label
+              )),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                motion.div,
+                {
+                  "data-ocid": "about.values.card",
+                  initial: { opacity: 0, y: 20 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: true },
+                  transition: { duration: 0.5, delay: 0.6 },
+                  className: "col-span-2 p-6 rounded-2xl border border-border/50 glass-blur",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-bold uppercase tracking-widest text-accent/70 mb-4", children: "What Drives Us" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-4", children: [
                       {
-                        className: "font-display font-bold text-4xl bg-clip-text text-transparent mb-1",
-                        style: {
-                          backgroundImage: `linear-gradient(135deg, ${color2}, ${color2}bb)`
-                        },
-                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatedCounter, { target: value, suffix: suffix2 })
+                        title: "Ownership Mentality",
+                        desc: "We treat your product like it's ours — accountable for outcomes, not just code delivery."
+                      },
+                      {
+                        title: "Deep Domain Focus",
+                        desc: "Specialists in e-commerce, property tech, travel, and AI — we go deep, not broad."
+                      },
+                      {
+                        title: "Speed Without Shortcuts",
+                        desc: "Fast iteration cycles, CI/CD pipelines, and battle-tested architectures — ship fast, stay stable."
                       }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground font-medium", children: label })
-                  ] })
-                ]
-              },
-              label
-            ))
+                    ].map(({ title, desc }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-semibold text-foreground mb-1", children: title }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground leading-relaxed", children: desc })
+                    ] }, title)) })
+                  ]
+                }
+              )
+            ]
           }
         )
       ] }) })
@@ -30584,7 +30631,7 @@ function Blog() {
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-bold text-base text-foreground leading-snug mb-3 group-hover:text-primary transition-colors duration-200", children: title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed mb-5 flex-1 line-clamp-3", children: excerpt }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed mb-5 flex-1", children: excerpt }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 text-xs text-muted-foreground", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1", children: [
@@ -30733,7 +30780,7 @@ function ClientCard({
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-white flex-shrink-0",
+            className: "w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-foreground flex-shrink-0",
             style: { background: `linear-gradient(135deg, ${color2}, ${color2}80)` },
             children: letter
           }
@@ -30772,7 +30819,7 @@ function ClientsStrip() {
               "aria-hidden": "true",
               className: "absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none",
               style: {
-                background: "linear-gradient(to right, oklch(var(--muted) / 0.2), transparent)"
+                background: "linear-gradient(to right, var(--background, #0a0a0a) 0%, transparent 100%)"
               }
             }
           ),
@@ -30782,7 +30829,7 @@ function ClientsStrip() {
               "aria-hidden": "true",
               className: "absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none",
               style: {
-                background: "linear-gradient(to left, oklch(var(--muted) / 0.2), transparent)"
+                background: "linear-gradient(to left, var(--background, #0a0a0a) 0%, transparent 100%)"
               }
             }
           ),
@@ -31574,7 +31621,7 @@ function Products() {
               whileInView: { opacity: 1, y: 0 },
               viewport: { once: true },
               transition: { duration: 0.6, delay: i * 0.15 },
-              className: "group relative flex flex-col rounded-2xl border border-border/50 overflow-hidden hover:border-border transition-smooth hover:shadow-glass",
+              className: "group relative flex flex-col rounded-2xl border border-border/50 overflow-visible hover:border-border transition-smooth hover:shadow-glass",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs(
                   "div",
@@ -31808,7 +31855,7 @@ function Services() {
               whileInView: { opacity: 1, y: 0 },
               viewport: { once: true },
               transition: { duration: 0.5, delay: i * 0.1 },
-              className: "group relative p-6 rounded-2xl border border-border/50 glass-blur hover:scale-[1.03] hover:shadow-glass transition-smooth cursor-default flex flex-col",
+              className: "group relative p-6 rounded-2xl border border-border/50 glass-blur hover:scale-[1.03] hover:shadow-glass transition-smooth cursor-default flex flex-col min-h-[280px]",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
@@ -31819,7 +31866,7 @@ function Services() {
                     }
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex flex-col gap-3 flex-1", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "div",
                     {
@@ -31831,8 +31878,8 @@ function Services() {
                       children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { size: 22, style: { color: iconColor } })
                     }
                   ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-lg text-foreground mb-2 leading-tight", children: title }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed", children: description }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-lg text-foreground leading-tight", children: title }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed flex-1", children: description }),
                   ragDiagram && /* @__PURE__ */ jsxRuntimeExports.jsx(RAGDiagram, { color: iconColor })
                 ] }),
                 useCase && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative mt-4 pt-4 border-t border-border/30", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -31855,6 +31902,16 @@ function Services() {
     }
   );
 }
+const Html5Icon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" }) });
+const Css3Icon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z" }) });
+const JavaScriptIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" }) });
+const SymfonyIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12c6.627 0 12-5.373 12-12S18.627 0 12 0zm1.553 5.255c.532-.01 1.033.109 1.398.29-.304.317-.484.7-.512 1.072-.04.53.154.85.698 1.458.47.523.703 1.076.662 1.768-.057.978-.62 1.652-1.735 2.206-.427.21-.898.35-1.48.435l-.22.029c-.22.028-.394.05-.553.082-.594.12-.97.352-1.102.69l-.012.04c-.13.498.28.85 1.182 1.025l.47.08c1.077.168 1.77.38 2.27.705.73.474 1.06 1.174.966 2.07-.12 1.144-.914 2.09-2.178 2.665-.78.353-1.696.526-2.672.509-1.063-.02-1.956-.263-2.553-.705-.525-.388-.78-.882-.74-1.457.08-1.083 1.082-1.908 2.354-1.908.518 0 .966.13 1.333.39.303.21.49.48.545.786l.013.085-.083-.007c-.26-.022-.5.003-.712.076-.425.146-.68.467-.708.88-.02.282.076.52.277.688.27.225.697.35 1.212.36.656.012 1.2-.137 1.617-.44.382-.278.607-.67.648-1.107.06-.647-.336-1.07-1.286-1.3l-.508-.116c-.832-.18-1.43-.4-1.87-.685-.65-.42-.932-1.01-.787-1.695.1-.47.38-.876.823-1.193.318-.227.693-.38 1.173-.48l.264-.047.228-.036c.225-.038.414-.073.584-.115.58-.147.94-.4 1.02-.73.057-.238-.032-.454-.258-.64-.286-.235-.753-.365-1.325-.365-.56 0-1.04.127-1.346.357-.24.18-.36.393-.35.618l.003.08-.078-.02c-.37-.094-.754-.105-1.13-.032l-.1.023.003-.09c.05-1.487 1.454-2.486 3.595-2.525l.214-.001z" }) });
+const BigCommerceIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M0 0v24h24V0H0zm14.14 16.41c-.57.57-1.37.86-2.39.86H7.04V6.75h4.5c.94 0 1.7.27 2.27.8.57.53.86 1.22.86 2.05 0 .57-.14 1.07-.42 1.5-.28.42-.66.72-1.14.9.57.16 1.02.47 1.35.93.33.46.5 1 .5 1.62 0 1.02-.28 1.79-.86 2.36zM9.96 8.96v2.15h1.36c.39 0 .7-.1.92-.31.22-.2.33-.48.33-.83 0-.34-.11-.61-.32-.8-.21-.2-.51-.3-.9-.3H9.96zm2.48 5.26c-.23-.22-.55-.33-.96-.33H9.96v2.37h1.52c.43 0 .76-.11.99-.33.23-.22.35-.52.35-.89 0-.38-.12-.68-.38-.82z" }) });
+const WixIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M21.12 7.2h-3.84L15.36 12l-1.92-4.8H12l2.88 7.2-1.92 2.4h1.92l1.44-1.8 1.44 1.8h1.92l-1.92-2.4 2.88-7.2zm-9.12 0H9.6L8.16 11.76 6.72 7.2H4.8l2.4 6-2.4 5.4h2.4l1.68-3.6 1.68 3.6H12.6l-2.4-5.4 2.4-6zm-9.12 0H0v9.6h2.88V7.2z" }) });
+const RedisIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10.585 4.59l2.985 1.184 2.985-1.186-2.985-1.184zm6.733 2.675l-3.747 1.49-3.748-1.488-3.748 1.486 3.748 1.487zm-14.84 2.67c-.47.19-.478.49-.018.674l3.36 1.35c.46.184 1.218.207 1.686.05l9.55-3.324c.467-.162.479-.435.025-.61L13.75 6.68c-.453-.174-1.198-.19-1.661-.035zm-.007 3.24c-.47.19-.476.49-.016.674l3.36 1.35c.46.184 1.218.207 1.687.05l9.55-3.323c.466-.163.478-.436.024-.61l-3.335-1.386c-.453-.174-1.198-.19-1.66-.035zm-.008 3.24c-.47.19-.476.49-.016.674l3.36 1.35c.46.184 1.218.207 1.687.05l9.55-3.323c.466-.163.478-.436.024-.61l-3.335-1.386c-.453-.174-1.198-.19-1.66-.035zm0 3.24c-.47.19-.476.49-.016.674l3.36 1.35c.46.184 1.218.207 1.687.05l9.55-3.323c.466-.163.478-.436.024-.61l-3.335-1.386c-.453-.174-1.198-.19-1.66-.035z" }) });
+const MySQLIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 3C7.373 3 3.555 5.865 2.099 9.868c.17-.029.339-.054.51-.074C3.877 7.1 7.659 5.25 12 5.25c2.977 0 5.676 1.023 7.789 2.716l-1.633 1.633A8.225 8.225 0 0012 7.5a8.25 8.25 0 100 16.5c4.556 0 8.25-3.694 8.25-8.25 0-.45-.037-.892-.107-1.322l1.938-1.938C22.667 13.432 23 14.682 23 16c0 6.075-4.925 11-11 11S1 22.075 1 16 5.925 5 12 5c2.33 0 4.492.724 6.27 1.956L16.732 8.49A9.714 9.714 0 0012 7.5 9.75 9.75 0 0012 27a9.75 9.75 0 000-19.5zm8.667 1.56l-6.64 6.64a1.5 1.5 0 01-2.122-2.122l6.64-6.64a1.5 1.5 0 012.122 2.122z" }) });
+const PostgreSQLIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M23.5 12c0 6.351-5.149 11.5-11.5 11.5S.5 18.351.5 12 5.649.5 12 .5 23.5 5.649 23.5 12zM12 2.5C6.753 2.5 2.5 6.753 2.5 12S6.753 21.5 12 21.5 21.5 17.247 21.5 12 17.247 2.5 12 2.5zm0 4c.276 0 .5.224.5.5v2.5h2.5a.5.5 0 010 1H12.5v2.5a.5.5 0 01-1 0v-2.5H9a.5.5 0 010-1h2.5V7a.5.5 0 01.5-.5zm3.5 7.5a.5.5 0 010 1H8.5a.5.5 0 010-1H15.5zm-1 2.5a.5.5 0 010 1H9.5a.5.5 0 010-1H14.5z" }) });
+const MongoDBIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.022-1.63-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z" }) });
 const NodeJsIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M11.998 24c-.321 0-.641-.084-.922-.247l-2.936-1.737c-.438-.245-.224-.332-.08-.383.585-.203.703-.25 1.328-.604.065-.037.151-.023.218.017l2.256 1.339c.082.045.197.045.272 0l8.795-5.076c.082-.047.134-.141.134-.238V6.921c0-.099-.053-.192-.137-.242l-8.791-5.072c-.081-.047-.189-.047-.271 0L3.075 6.68C2.99 6.729 2.936 6.825 2.936 6.921v10.15c0 .097.054.189.139.235l2.409 1.392c1.307.654 2.108-.116 2.108-.89V7.787c0-.142.114-.253.256-.253h1.115c.139 0 .255.112.255.253v10.021c0 1.745-.95 2.745-2.604 2.745-.508 0-.909 0-2.026-.551L2.28 18.675a1.86 1.86 0 0 1-.922-1.604V6.921c0-.659.353-1.275.922-1.603l8.795-5.082c.557-.315 1.296-.315 1.848 0l8.794 5.082c.57.329.924.944.924 1.603v10.15c0 .659-.354 1.275-.924 1.604l-8.794 5.078C12.643 23.916 12.324 24 11.998 24z" }) });
 const JavaIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.113.828-.092.828-.092-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.821M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639" }) });
 const SpringBootIcon = ({ color: color2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { "aria-hidden": "true", viewBox: "0 0 24 24", fill: color2, className: "w-7 h-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M20.205 16.392c-2.469 3.289-7.741 4.28-11.093 1.609C5.971 15.459 5.767 11.23 7.394 8.401c1.77-3.136 5.573-4.963 9.09-3.758.902.35 1.682 1.02 2.325 1.925.217.31.682 1.041.682 1.041-.395.313-.912.881-1.542.881-.362.006-.64-.137-.994-.408 0 0-.313-.266-.54-.399-2.178-1.301-5.35-.572-7.034 1.479-.964 1.198-1.425 2.706-1.371 4.186.063 1.707.806 3.397 2.139 4.474 1.985 1.6 4.955 1.426 7.006-.011.666-.467 1.269-1.099 1.574-1.883L20.205 16.392zm-5.257.088c-.456 1.053-1.545 1.766-2.691 1.766-2.162.001-3.659-1.928-3.247-4.038.187-.951.726-1.849 1.536-2.424 1.659-1.165 4.055-.41 4.749 1.494.183.505.232 1.042.138 1.569-.04.228-.102.447-.181.647l-2.51-2.51c-.375-.376-.979-.468-1.459-.225-.28.144-.499.388-.621.686a1.576 1.576 0 0 0 .325 1.683l2.52 2.521c.097.097.2.186.309.264l.132.567z" }) });
@@ -31924,6 +31981,24 @@ const TECH_CATEGORIES = [
     label: "Frontend",
     techs: [
       {
+        name: "HTML5",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Html5Icon, { color: "#E34F26" }),
+        color: "#E34F26",
+        description: "Semantic markup and structure for the modern web"
+      },
+      {
+        name: "CSS3",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Css3Icon, { color: "#1572B6" }),
+        color: "#1572B6",
+        description: "Styling, animations, and responsive layouts"
+      },
+      {
+        name: "JavaScript",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(JavaScriptIcon, { color: "#F7DF1E" }),
+        color: "#F7DF1E",
+        description: "Core language for interactive web experiences"
+      },
+      {
         name: "React",
         icon: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactIcon2, { color: "#61DAFB" }),
         color: "#61DAFB",
@@ -31975,6 +32050,12 @@ const TECH_CATEGORIES = [
         icon: /* @__PURE__ */ jsxRuntimeExports.jsx(LaravelIcon, { color: "#FF2D20" }),
         color: "#FF2D20",
         description: "Elegant PHP framework for web artisans"
+      },
+      {
+        name: "Symfony",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(SymfonyIcon, { color: "#8B5CF6" }),
+        color: "#8B5CF6",
+        description: "High-performance PHP framework for complex enterprise apps"
       }
     ]
   },
@@ -31986,6 +32067,47 @@ const TECH_CATEGORIES = [
         icon: /* @__PURE__ */ jsxRuntimeExports.jsx(ShopifyIcon, { color: "#96BF48" }),
         color: "#96BF48",
         description: "Native app development for Shopify merchants"
+      },
+      {
+        name: "BigCommerce",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(BigCommerceIcon, { color: "#34313F" }),
+        color: "#34313F",
+        description: "Enterprise e-commerce platform integrations"
+      },
+      {
+        name: "Wix",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(WixIcon, { color: "#0C6EFC" }),
+        color: "#0C6EFC",
+        description: "Custom Wix app and extension development"
+      }
+    ]
+  },
+  {
+    label: "Databases",
+    techs: [
+      {
+        name: "PostgreSQL",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(PostgreSQLIcon, { color: "#4169E1" }),
+        color: "#4169E1",
+        description: "Advanced open-source relational database"
+      },
+      {
+        name: "MySQL",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(MySQLIcon, { color: "#4479A1" }),
+        color: "#4479A1",
+        description: "Reliable relational database for web applications"
+      },
+      {
+        name: "MongoDB",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(MongoDBIcon, { color: "#47A248" }),
+        color: "#47A248",
+        description: "Flexible NoSQL document database for modern apps"
+      },
+      {
+        name: "Redis",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(RedisIcon, { color: "#DC382D" }),
+        color: "#DC382D",
+        description: "In-memory data store for caching and real-time ops"
       }
     ]
   },
@@ -32040,8 +32162,8 @@ const TECH_CATEGORIES = [
     techs: [
       {
         name: "Kafka",
-        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(KafkaIcon, { color: "#231F20" }),
-        color: "#231F20",
+        icon: /* @__PURE__ */ jsxRuntimeExports.jsx(KafkaIcon, { color: "#9B4DCA" }),
+        color: "#9B4DCA",
         description: "Distributed event streaming at scale"
       },
       {
@@ -32318,7 +32440,7 @@ function Testimonials() {
                       style: { color: accentColor }
                     }
                   ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-foreground/85 leading-relaxed text-sm mb-6 flex-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-foreground/85 leading-relaxed text-sm mb-6", children: [
                     '"',
                     quote,
                     '"'
@@ -32436,7 +32558,7 @@ function WhyUs() {
               whileInView: { opacity: 1, y: 0 },
               viewport: { once: true },
               transition: { duration: 0.5, delay: i * 0.1 },
-              className: "group p-6 rounded-2xl border border-border/50 bg-card/60 hover:shadow-glass hover:scale-[1.03] transition-smooth",
+              className: "group p-6 rounded-2xl border border-border/50 bg-card/60 hover:shadow-glass hover:scale-[1.03] transition-smooth flex flex-col",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",

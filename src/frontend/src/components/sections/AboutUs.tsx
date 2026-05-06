@@ -92,7 +92,7 @@ export default function AboutUs() {
       className="py-24 bg-background"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -32 }}
@@ -104,7 +104,7 @@ export default function AboutUs() {
               Who We Are
             </span>
             <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-6 leading-tight">
-              Built to Scale Your{" "}
+              A Team That Builds{" "}
               <span
                 className="bg-clip-text text-transparent"
                 style={{
@@ -112,14 +112,33 @@ export default function AboutUs() {
                     "linear-gradient(135deg, oklch(0.70 0.24 260), oklch(0.75 0.22 290))",
                 }}
               >
-                Digital Vision
+                What You Actually Need
               </span>
             </h2>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-5">
-              Founded in 2020, WebWhistl has grown from a 2-person startup to a
-              25+ member team of engineers, designers, and product strategists —
-              all united by one mission.
+              Founded in 2020 out of a frustration with bloated off-the-shelf
+              software, WebWhistl was built on a simple belief: businesses
+              deserve custom-engineered solutions that actually fit their
+              operations — not the other way around.
+            </p>
+
+            <p className="text-base text-muted-foreground leading-relaxed mb-5">
+              Today, we're a 25+ member team of full-stack engineers, AI/ML
+              specialists, UX designers, and DevOps engineers with deep domain
+              expertise across e-commerce, property management, and travel.
+              We've shipped SaaS products for Shopify and BigCommerce merchants,
+              PG management platforms handling thousands of tenants, and unified
+              travel booking systems with real-time hotel, flight, and bus
+              availability.
+            </p>
+
+            <p className="text-base text-muted-foreground leading-relaxed mb-8">
+              What makes us different isn't just our tech stack — it's the way
+              we work. We move fast without cutting corners, embed ourselves in
+              your business context, and own outcomes rather than just
+              deliverables. From a raw idea to a production-grade SaaS platform,
+              we handle the full journey.
             </p>
 
             <blockquote
@@ -130,17 +149,30 @@ export default function AboutUs() {
               }}
             >
               <p className="text-base font-semibold italic text-foreground/90">
-                "We build scalable SaaS solutions that help businesses grow
-                faster in the digital age."
+                &ldquo;We don&rsquo;t build generic software. We build the exact
+                tool your business needs to scale — architected for today,
+                engineered for tomorrow.&rdquo;
               </p>
             </blockquote>
 
-            <p className="text-base text-muted-foreground leading-relaxed">
-              We specialize in custom software for e-commerce, property
-              management, travel, and AI-powered systems — building platforms
-              that are fast to ship, easy to maintain, and designed to scale
-              with your business.
-            </p>
+            {/* Expertise pills */}
+            <div className="flex flex-wrap gap-2 mt-6">
+              {[
+                "E-commerce SaaS",
+                "AI & RAG Systems",
+                "Property Tech",
+                "Travel Platforms",
+                "Cloud-Native Apps",
+                "Mobile Development",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 rounded-full text-xs font-semibold border border-border/60 bg-muted/50 text-foreground/70"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </motion.div>
 
           {/* Stats grid */}
@@ -178,10 +210,8 @@ export default function AboutUs() {
                     <Icon size={18} style={{ color }} />
                   </div>
                   <div
-                    className="font-display font-bold text-4xl bg-clip-text text-transparent mb-1"
-                    style={{
-                      backgroundImage: `linear-gradient(135deg, ${color}, ${color}bb)`,
-                    }}
+                    className="font-display font-bold text-4xl mb-1"
+                    style={{ color }}
                   >
                     <AnimatedCounter target={value} suffix={suffix} />
                   </div>
@@ -191,6 +221,45 @@ export default function AboutUs() {
                 </div>
               </motion.div>
             ))}
+
+            {/* Values card spanning full width */}
+            <motion.div
+              data-ocid="about.values.card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="col-span-2 p-6 rounded-2xl border border-border/50 glass-blur"
+            >
+              <p className="text-xs font-bold uppercase tracking-widest text-accent/70 mb-4">
+                What Drives Us
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  {
+                    title: "Ownership Mentality",
+                    desc: "We treat your product like it's ours — accountable for outcomes, not just code delivery.",
+                  },
+                  {
+                    title: "Deep Domain Focus",
+                    desc: "Specialists in e-commerce, property tech, travel, and AI — we go deep, not broad.",
+                  },
+                  {
+                    title: "Speed Without Shortcuts",
+                    desc: "Fast iteration cycles, CI/CD pipelines, and battle-tested architectures — ship fast, stay stable.",
+                  },
+                ].map(({ title, desc }) => (
+                  <div key={title}>
+                    <p className="text-sm font-semibold text-foreground mb-1">
+                      {title}
+                    </p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

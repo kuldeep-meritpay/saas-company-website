@@ -131,7 +131,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="group relative flex flex-col rounded-2xl border border-border/50 overflow-hidden hover:border-border transition-smooth hover:shadow-glass"
+                className="group relative flex flex-col rounded-2xl border border-border/50 overflow-visible hover:border-border transition-smooth hover:shadow-glass"
               >
                 {/* Card gradient header */}
                 <div

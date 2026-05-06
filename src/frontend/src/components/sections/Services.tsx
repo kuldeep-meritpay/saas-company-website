@@ -168,7 +168,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative p-6 rounded-2xl border border-border/50 glass-blur hover:scale-[1.03] hover:shadow-glass transition-smooth cursor-default flex flex-col"
+                className="group relative p-6 rounded-2xl border border-border/50 glass-blur hover:scale-[1.03] hover:shadow-glass transition-smooth cursor-default flex flex-col min-h-[280px]"
               >
                 {/* Gradient bg on hover */}
                 <div
@@ -177,7 +177,7 @@ export default function Services() {
                     background: `radial-gradient(ellipse at top left, ${iconColor}18 0%, transparent 60%)`,
                   }}
                 />
-                <div className="relative flex-1">
+                <div className="relative flex flex-col gap-3 flex-1">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                     style={{
@@ -187,10 +187,10 @@ export default function Services() {
                   >
                     <Icon size={22} style={{ color: iconColor }} />
                   </div>
-                  <h3 className="font-display font-semibold text-lg text-foreground mb-2 leading-tight">
+                  <h3 className="font-display font-semibold text-lg text-foreground leading-tight">
                     {title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {description}
                   </p>
                   {ragDiagram && <RAGDiagram color={iconColor} />}

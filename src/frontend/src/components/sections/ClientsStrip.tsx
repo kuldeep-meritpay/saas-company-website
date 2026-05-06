@@ -110,7 +110,7 @@ function ClientCard({
       style={{ minWidth: "160px" }}
     >
       <div
-        className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
+        className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-foreground flex-shrink-0"
         style={{ background: `linear-gradient(135deg, ${color}, ${color}80)` }}
       >
         {letter}
@@ -154,7 +154,7 @@ export default function ClientsStrip() {
           className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to right, oklch(var(--muted) / 0.2), transparent)",
+              "linear-gradient(to right, var(--background, #0a0a0a) 0%, transparent 100%)",
           }}
         />
         <div
@@ -162,7 +162,7 @@ export default function ClientsStrip() {
           className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to left, oklch(var(--muted) / 0.2), transparent)",
+              "linear-gradient(to left, var(--background, #0a0a0a) 0%, transparent 100%)",
           }}
         />
 

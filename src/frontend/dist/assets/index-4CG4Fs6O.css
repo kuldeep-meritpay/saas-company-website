@@ -765,6 +765,9 @@ video {
 .z-\[60\] {
   z-index: 60;
 }
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
 .col-start-2 {
   grid-column-start: 2;
 }
@@ -888,6 +891,9 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .mt-auto {
   margin-top: auto;
 }
@@ -896,12 +902,6 @@ video {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-}
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 }
 .block {
   display: block;
@@ -1080,6 +1080,9 @@ video {
 }
 .min-h-4 {
   min-height: 1rem;
+}
+.min-h-\[280px\] {
+  min-height: 280px;
 }
 .min-h-\[calc\(100vh-4rem\)\] {
   min-height: calc(100vh - 4rem);
@@ -1522,6 +1525,9 @@ video {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.overflow-visible {
+  overflow: visible;
 }
 .overflow-x-auto {
   overflow-x: auto;
@@ -2041,6 +2047,9 @@ video {
 }
 .text-accent-foreground {
   color: oklch(var(--accent-foreground));
+}
+.text-accent\/70 {
+  color: oklch(var(--accent) / 0.7);
 }
 .text-accent\/80 {
   color: oklch(var(--accent) / 0.8);

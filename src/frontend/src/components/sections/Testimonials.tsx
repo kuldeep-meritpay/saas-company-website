@@ -135,7 +135,7 @@ export default function Testimonials() {
                     style={{ color: accentColor }}
                   />
 
-                  <p className="text-foreground/85 leading-relaxed text-sm mb-6 flex-1">
+                  <p className="text-foreground/85 leading-relaxed text-sm mb-6">
                     "{quote}"
                   </p>
 

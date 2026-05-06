@@ -83,7 +83,7 @@ export default function WhyUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group p-6 rounded-2xl border border-border/50 bg-card/60 hover:shadow-glass hover:scale-[1.03] transition-smooth"
+                className="group p-6 rounded-2xl border border-border/50 bg-card/60 hover:shadow-glass hover:scale-[1.03] transition-smooth flex flex-col"
               >
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center mb-5 shadow-elevated"

@@ -105,7 +105,7 @@ export default function Blog() {
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1 line-clamp-3">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
                   {excerpt}
                 </p>
 
