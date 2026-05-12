@@ -16,6 +16,7 @@ interface FormState {
   email: string;
   company: string;
   message: string;
+  _website: string; // honeypot
 }
 
 interface FieldErrors {
@@ -30,6 +31,7 @@ const INITIAL_FORM: FormState = {
   email: "",
   company: "",
   message: "",
+  _website: "",
 };
 
 function validate(form: FormState): FieldErrors {
@@ -94,6 +96,14 @@ export default function Contact() {
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
+    // Honeypot check — if _website is filled, silently fail
+    if (form._website) {
+      setStatus("success");
+      setForm(INITIAL_FORM);
+      setTouched({});
+      setErrors({});
+      return;
+    }
     setStatus("loading");
     await new Promise((r) => setTimeout(r, 1200));
     setStatus("success");
@@ -103,7 +113,7 @@ export default function Contact() {
   }
 
   const inputBase =
-    "w-full px-4 py-3 rounded-xl border bg-card/60 text-foreground placeholder:text-muted-foreground/60 text-sm focus:outline-none focus:ring-2 focus:ring-primary/60 transition-smooth";
+    "w-full px-3.5 py-2.5 rounded-lg border bg-card/40 text-foreground placeholder:text-muted-foreground/50 text-[13.5px] focus:outline-none focus:ring-1 focus:ring-primary/50 transition-colors duration-150";
 
   return (
     <section
@@ -120,13 +130,20 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/8 text-primary text-xs font-semibold uppercase tracking-widest mb-4">
+          <span
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-4"
+            style={{
+              border: "1px solid oklch(0.68 0.24 260 / 0.25)",
+              background: "oklch(0.68 0.24 260 / 0.07)",
+              color: "oklch(0.68 0.24 260)",
+            }}
+          >
             Get In Touch
           </span>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-4">
-            Let's Build Your SaaS Product
+          <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-4 tracking-[-0.02em]">
+            Let’s Build Your SaaS Product
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
             Tell us about your vision — we'll help you scope, architect, and
             ship it. No commitment, just a conversation.
           </p>
@@ -141,7 +158,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-3"
           >
-            <div className="p-8 rounded-2xl border border-border/50 glass-blur">
+            <div className="p-7 rounded-xl border border-border/40 bg-card/50">
               {status === "success" ? (
                 <div
                   data-ocid="contact.success_state"
@@ -166,12 +183,25 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                  {/* Honeypot field — hidden from real users, catches bots */}
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="_website">Website</label>
+                    <input
+                      id="_website"
+                      name="_website"
+                      type="text"
+                      autoComplete="off"
+                      tabIndex={-1}
+                      value={form._website}
+                      onChange={handleChange}
+                    />
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {/* Full Name */}
                     <div>
                       <label
                         htmlFor="fullName"
-                        className="block text-sm font-semibold text-foreground mb-1.5"
+                        className="block text-[12.5px] font-semibold text-foreground/80 mb-1.5"
                       >
                         Full Name <span className="text-destructive">*</span>
                       </label>
@@ -201,7 +231,7 @@ export default function Contact() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-semibold text-foreground mb-1.5"
+                        className="block text-[12.5px] font-semibold text-foreground/80 mb-1.5"
                       >
                         Email Address{" "}
                         <span className="text-destructive">*</span>
@@ -233,7 +263,7 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="company"
-                      className="block text-sm font-semibold text-foreground mb-1.5"
+                      className="block text-[12.5px] font-semibold text-foreground/80 mb-1.5"
                     >
                       Company Name <span className="text-destructive">*</span>
                     </label>
@@ -263,7 +293,7 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-semibold text-foreground mb-1.5"
+                      className="block text-[12.5px] font-semibold text-foreground/80 mb-1.5"
                     >
                       How can we help?{" "}
                       <span className="text-destructive">*</span>
@@ -304,7 +334,7 @@ export default function Contact() {
                       type="submit"
                       data-ocid="contact.submit_button"
                       disabled={status === "loading"}
-                      className="btn-primary-gradient inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-base font-semibold text-white shadow-elevated disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+                      className="btn-primary-gradient inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg text-[13.5px] font-semibold text-white disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100 transition-all duration-200 hover:scale-[1.02]"
                     >
                       {status === "loading" ? (
                         <>
@@ -325,7 +355,7 @@ export default function Contact() {
                           .getElementById(SECTION_IDS.CONTACT)
                           ?.scrollIntoView({ behavior: "smooth" })
                       }
-                      className="btn-outline-gradient inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-base font-semibold"
+                      className="btn-outline-gradient inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg text-[13.5px] font-semibold"
                     >
                       <Phone size={16} /> Schedule a Call
                     </button>
@@ -344,8 +374,8 @@ export default function Contact() {
             className="lg:col-span-2 space-y-6"
           >
             {/* Info card */}
-            <div className="p-6 rounded-2xl border border-border/50 glass-blur space-y-5">
-              <h3 className="font-display font-bold text-xl text-foreground">
+            <div className="p-5 rounded-xl border border-border/35 bg-card/50 space-y-4">
+              <h3 className="font-semibold text-[15px] text-foreground">
                 Contact Information
               </h3>
               <div className="flex items-start gap-3">
@@ -359,7 +389,7 @@ export default function Contact() {
                   <Mail size={16} style={{ color: "oklch(0.70 0.24 260)" }} />
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground mb-0.5">
+                  <p className="text-[11.5px] text-muted-foreground mb-0.5">
                     Email us at
                   </p>
                   <a
@@ -382,29 +412,28 @@ export default function Contact() {
                   <MapPin size={16} style={{ color: "oklch(0.75 0.22 290)" }} />
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground mb-0.5">
+                  <p className="text-[11.5px] text-muted-foreground mb-0.5">
                     Location
                   </p>
-                  <p className="text-sm font-semibold text-foreground">
+                  <p className="text-[13.5px] font-semibold text-foreground">
                     Remote / Global
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Response SLA */}
             <div
-              className="p-6 rounded-2xl border"
+              className="p-5 rounded-xl border"
               style={{
                 background:
                   "linear-gradient(135deg, oklch(0.70 0.24 260 / 0.1), oklch(0.75 0.22 290 / 0.08))",
                 borderColor: "oklch(0.70 0.24 260 / 0.25)",
               }}
             >
-              <h4 className="font-display font-bold text-base text-foreground mb-2">
+              <h4 className="font-semibold text-[14px] text-foreground mb-1.5">
                 ⚡ Fast Response Guarantee
               </h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-[13px] text-muted-foreground/80 leading-relaxed">
                 We respond to every inquiry within{" "}
                 <strong className="text-foreground">24 hours</strong>. For
                 urgent projects, mention your timeline in the message.
@@ -421,10 +450,10 @@ export default function Contact() {
               ].map(({ label, value }) => (
                 <div
                   key={label}
-                  className="p-4 rounded-xl border border-border/40 bg-card/50 text-center"
+                  className="p-3.5 rounded-lg border border-border/35 bg-card/40 text-center"
                 >
                   <div
-                    className="font-display font-bold text-xl bg-clip-text text-transparent"
+                    className="font-display font-bold text-lg bg-clip-text text-transparent"
                     style={{
                       backgroundImage:
                         "linear-gradient(135deg, oklch(0.70 0.24 260), oklch(0.75 0.22 290))",
@@ -432,7 +461,7 @@ export default function Contact() {
                   >
                     {value}
                   </div>
-                  <div className="text-xs text-muted-foreground mt-0.5">
+                  <div className="text-[11.5px] text-muted-foreground/70 mt-0.5">
                     {label}
                   </div>
                 </div>

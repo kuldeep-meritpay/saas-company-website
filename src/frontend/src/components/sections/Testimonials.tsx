@@ -80,13 +80,20 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/8 text-primary text-xs font-semibold uppercase tracking-widest mb-4">
+          <span
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-4"
+            style={{
+              border: "1px solid oklch(0.68 0.24 260 / 0.25)",
+              background: "oklch(0.68 0.24 260 / 0.07)",
+              color: "oklch(0.68 0.24 260)",
+            }}
+          >
             Client Stories
           </span>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-4">
+          <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-4 tracking-[-0.02em]">
             What Our Clients Say
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
             Real results from real businesses that trusted WebWhistl to build
             their digital backbone.
           </p>
@@ -115,7 +122,7 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="group relative flex flex-col p-7 rounded-2xl border border-border/50 glass-blur hover:shadow-glass hover:scale-[1.02] transition-smooth"
+                className="group relative flex flex-col p-6 rounded-xl border border-border/40 bg-card/50 hover:border-border/70 hover:shadow-sm transition-all duration-200"
               >
                 {/* Gradient tint */}
                 <div
@@ -135,7 +142,7 @@ export default function Testimonials() {
                     style={{ color: accentColor }}
                   />
 
-                  <p className="text-foreground/85 leading-relaxed text-sm mb-6">
+                  <p className="text-[13.5px] text-foreground/80 leading-relaxed mb-5">
                     "{quote}"
                   </p>
 
@@ -172,7 +179,7 @@ export default function Testimonials() {
                       <div className="text-sm font-semibold text-foreground">
                         {name}
                       </div>
-                      <div className="text-xs text-muted-foreground">
+                      <div className="text-[12px] text-muted-foreground/70">
                         {title}, {company}
                       </div>
                     </div>

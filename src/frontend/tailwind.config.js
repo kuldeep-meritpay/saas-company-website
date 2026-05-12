@@ -99,12 +99,22 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        breathe: {
+          "0%, 100%": { transform: "scale(1)", opacity: "0.2" },
+          "50%": { transform: "scale(1.5)", opacity: "0.5" },
+        },
+        "flow-dash": {
+          "0%": { strokeDashoffset: "40" },
+          "100%": { strokeDashoffset: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-up": "fade-in-up 0.5s ease-out forwards",
         "scroll-left": "scroll-left 35s linear infinite",
+        breathe: "breathe 2s ease-in-out infinite",
+        "flow-dash": "flow-dash 1.5s linear infinite",
       },
     },
   },

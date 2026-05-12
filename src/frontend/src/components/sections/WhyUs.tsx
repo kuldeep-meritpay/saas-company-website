@@ -54,13 +54,20 @@ export default function WhyUs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/8 text-primary text-xs font-semibold uppercase tracking-widest mb-4">
+          <span
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-4"
+            style={{
+              border: "1px solid oklch(0.68 0.24 260 / 0.25)",
+              background: "oklch(0.68 0.24 260 / 0.07)",
+              color: "oklch(0.68 0.24 260)",
+            }}
+          >
             Our Edge
           </span>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-4">
+          <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-4 tracking-[-0.02em]">
             Why Choose WebWhistl
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
             We're not just a development shop — we're your long-term technology
             partner, invested in your success.
           </p>
@@ -83,18 +90,18 @@ export default function WhyUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group p-6 rounded-2xl border border-border/50 bg-card/60 hover:shadow-glass hover:scale-[1.03] transition-smooth flex flex-col"
+                className="group p-6 rounded-xl border border-border/40 bg-card/50 hover:border-border/70 hover:bg-card/80 hover:shadow-sm transition-all duration-200 flex flex-col"
               >
                 <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center mb-5 shadow-elevated"
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
                   style={{ background: gradient }}
                 >
                   <Icon size={22} className="text-white" />
                 </div>
-                <h3 className="font-display font-bold text-lg text-foreground mb-2">
+                <h3 className="font-semibold text-[15px] text-foreground mb-2">
                   {title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-[13px] text-muted-foreground/80 leading-relaxed">
                   {description}
                 </p>
                 {/* Accent underline */}
@@ -118,12 +125,15 @@ export default function WhyUs() {
           <button
             type="button"
             data-ocid="why-us.cta_button"
-            onClick={() =>
-              document
-                .getElementById(SECTION_IDS.CONTACT)
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="btn-primary-gradient inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white shadow-elevated"
+            onClick={() => {
+              const el = document.getElementById("contact");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-lg text-[14px] font-semibold text-white shadow-sm cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-md"
+            style={{
+              background:
+                "linear-gradient(135deg, oklch(0.65 0.24 260), oklch(0.72 0.22 290))",
+            }}
           >
             Start Your Project Today
           </button>

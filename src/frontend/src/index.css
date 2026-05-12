@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    --font-display: "Space Grotesk";
-    --font-body: "DM Sans";
-    --font-mono: monospace;
-    --radius: 0.625rem;
+    --font-display: "Inter";
+    --font-body: "Inter";
+    --font-mono: "JetBrains Mono", "Fira Code", monospace;
+    --radius: 0.5rem;
 
-    --background: 0.98 0.008 230;
-    --foreground: 0.18 0.015 230;
-    --card: 1.0 0.004 230;
-    --card-foreground: 0.18 0.015 230;
-    --popover: 1.0 0.004 230;
-    --popover-foreground: 0.18 0.015 230;
+    --background: 0.985 0.003 240;
+    --foreground: 0.145 0.012 240;
+    --card: 1.0 0.002 240;
+    --card-foreground: 0.145 0.012 240;
+    --popover: 1.0 0.002 240;
+    --popover-foreground: 0.145 0.012 240;
 
-    --primary: 0.5 0.2 260;
-    --primary-foreground: 0.98 0.008 230;
+    --primary: 0.52 0.22 260;
+    --primary-foreground: 0.99 0.002 240;
 
-    --secondary: 0.95 0.01 230;
-    --secondary-foreground: 0.28 0.015 230;
-    --muted: 0.94 0.01 230;
-    --muted-foreground: 0.5 0.012 230;
+    --secondary: 0.96 0.005 240;
+    --secondary-foreground: 0.25 0.01 240;
+    --muted: 0.96 0.005 240;
+    --muted-foreground: 0.48 0.01 240;
 
-    --accent: 0.6 0.18 290;
-    --accent-foreground: 0.98 0.008 290;
+    --accent: 0.62 0.19 290;
+    --accent-foreground: 0.99 0.002 290;
 
     --destructive: 0.55 0.22 25;
     --destructive-foreground: 0.98 0.005 25;
 
-    --border: 0.9 0.008 230;
-    --input: 0.9 0.008 230;
-    --ring: 0.5 0.2 260;
+    --border: 0.91 0.004 240;
+    --input: 0.91 0.004 240;
+    --ring: 0.52 0.22 260;
 
     --chart-1: 0.65 0.22 40;
     --chart-2: 0.6 0.12 185;
@@ -51,30 +51,30 @@
   }
 
   .dark {
-    --background: 0.14 0.018 260;
-    --foreground: 0.92 0.012 260;
-    --card: 0.18 0.02 260;
-    --card-foreground: 0.92 0.012 260;
-    --popover: 0.22 0.02 260;
-    --popover-foreground: 0.92 0.012 260;
+    --background: 0.11 0.016 260;
+    --foreground: 0.94 0.008 260;
+    --card: 0.155 0.016 260;
+    --card-foreground: 0.94 0.008 260;
+    --popover: 0.19 0.016 260;
+    --popover-foreground: 0.94 0.008 260;
 
-    --primary: 0.7 0.24 260;
-    --primary-foreground: 0.14 0.018 260;
+    --primary: 0.68 0.24 260;
+    --primary-foreground: 0.11 0.016 260;
 
-    --secondary: 0.22 0.02 260;
-    --secondary-foreground: 0.85 0.01 260;
-    --muted: 0.22 0.02 260;
-    --muted-foreground: 0.55 0.012 260;
+    --secondary: 0.2 0.016 260;
+    --secondary-foreground: 0.86 0.008 260;
+    --muted: 0.2 0.016 260;
+    --muted-foreground: 0.55 0.01 260;
 
-    --accent: 0.75 0.22 290;
-    --accent-foreground: 0.14 0.018 290;
+    --accent: 0.74 0.22 290;
+    --accent-foreground: 0.11 0.016 290;
 
     --destructive: 0.65 0.19 22;
-    --destructive-foreground: 0.92 0.01 22;
+    --destructive-foreground: 0.94 0.008 22;
 
-    --border: 0.28 0.02 260;
-    --input: 0.28 0.02 260;
-    --ring: 0.7 0.24 260;
+    --border: 0.26 0.016 260;
+    --input: 0.26 0.016 260;
+    --ring: 0.68 0.24 260;
 
     --chart-1: 0.49 0.24 264;
     --chart-2: 0.7 0.17 162;
@@ -100,17 +100,19 @@
   }
 }
 
-@font-face {
-  font-family: "Space Grotesk";
-  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
-  font-display: swap;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-@font-face {
-  font-family: "DM Sans";
-  src: url("/assets/fonts/DMSans.woff2") format("woff2");
-  font-display: swap;
-}
+/* Inter loaded via Google Fonts in index.html */
+/* Fallback: system UI font stack */
 
 @layer utilities {
   .transition-smooth {
@@ -126,10 +128,10 @@
   }
 
   .glass-blur {
-    background: oklch(var(--background) / 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid oklch(var(--border) / 0.3);
+    background: oklch(var(--background) / 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 0.5px solid oklch(var(--border) / 0.5);
   }
 
   .fade-in-up {
@@ -138,5 +140,22 @@
 
   .section-alternate {
     @apply bg-muted/20;
+  }
+}
+
+.ngrok-card {
+  background: oklch(var(--card));
+  border: 0.5px solid oklch(var(--border) / 0.7);
+  border-radius: var(--radius);
+}
+
+.svg-flow-path {
+  stroke-dasharray: 6 4;
+  animation: flow-dash 1.5s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .svg-flow-path {
+    animation: none;
+    stroke-dasharray: none;
   }
 }

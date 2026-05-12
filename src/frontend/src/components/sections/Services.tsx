@@ -84,37 +84,243 @@ const SERVICES: ServiceCard[] = [
   },
 ];
 
-function RAGDiagram({ color }: { color: string }) {
-  const steps = ["Document", "Index", "Query", "Answer"];
+function RAGDiagram() {
+  const blue = "oklch(0.68 0.24 260)";
+  const purple = "oklch(0.74 0.22 290)";
+
   return (
-    <div className="mt-4 flex items-center gap-1.5 flex-wrap">
-      {steps.map((step, i) => (
-        <div key={step} className="flex items-center gap-1.5">
-          <div
-            className="px-2 py-1 rounded-md text-[10px] font-semibold text-white"
-            style={{ background: `${color}${i === 3 ? "cc" : "80"}` }}
-          >
-            {step}
-          </div>
-          {i < steps.length - 1 && (
-            <svg
-              aria-hidden="true"
-              width="12"
-              height="8"
-              viewBox="0 0 12 8"
-              fill="none"
-            >
-              <path
-                d="M1 4h9M7 1l3 3-3 3"
-                stroke={color}
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          )}
-        </div>
-      ))}
+    <div className="mt-5 w-full overflow-hidden">
+      <svg
+        className="font-mono w-full h-auto"
+        role="img"
+        width="280"
+        height="100"
+        viewBox="0 0 280 100"
+        fill="none"
+        preserveAspectRatio="xMidYMid meet"
+        aria-label="RAG data flow: Documents to Vector Index to Query Engine to Answer"
+      >
+        {/* --- Nodes --- */}
+        {/* Doc node */}
+        <rect
+          x="2"
+          y="34"
+          width="52"
+          height="32"
+          rx="5"
+          fill="oklch(0.155 0.016 260)"
+          stroke="oklch(0.28 0.016 260)"
+          strokeWidth="0.5"
+        />
+        <text
+          x="28"
+          y="52"
+          fill="oklch(0.85 0.008 260)"
+          fontSize="7"
+          fontWeight="600"
+          textAnchor="middle"
+          dominantBaseline="middle"
+        >
+          Docs
+        </text>
+        {/* Pulsing dot on doc node */}
+        <circle
+          cx="54"
+          cy="50"
+          r="6"
+          fill={blue}
+          opacity="0.18"
+          className="motion-safe:animate-[breathe_2s_ease-in-out_infinite]"
+          style={{ transformOrigin: "54px 50px" }}
+        />
+        <circle cx="54" cy="50" r="3" fill={blue} />
+
+        {/* Index node */}
+        <rect
+          x="72"
+          y="34"
+          width="60"
+          height="32"
+          rx="5"
+          fill="oklch(0.155 0.016 260)"
+          stroke="oklch(0.28 0.016 260)"
+          strokeWidth="0.5"
+        />
+        <text
+          x="102"
+          y="52"
+          fill="oklch(0.85 0.008 260)"
+          fontSize="7"
+          fontWeight="600"
+          textAnchor="middle"
+          dominantBaseline="middle"
+        >
+          Vector Index
+        </text>
+        {/* Pulsing dots on both sides */}
+        <circle
+          cx="72"
+          cy="50"
+          r="6"
+          fill={purple}
+          opacity="0.18"
+          className="motion-safe:animate-[breathe_2s_ease-in-out_infinite]"
+          style={{ transformOrigin: "72px 50px", animationDelay: "0.3s" }}
+        />
+        <circle cx="72" cy="50" r="3" fill={purple} />
+        <circle
+          cx="132"
+          cy="50"
+          r="6"
+          fill={purple}
+          opacity="0.18"
+          className="motion-safe:animate-[breathe_2s_ease-in-out_infinite]"
+          style={{ transformOrigin: "132px 50px", animationDelay: "0.6s" }}
+        />
+        <circle cx="132" cy="50" r="3" fill={purple} />
+
+        {/* Query node */}
+        <rect
+          x="150"
+          y="34"
+          width="60"
+          height="32"
+          rx="5"
+          fill="oklch(0.155 0.016 260)"
+          stroke="oklch(0.28 0.016 260)"
+          strokeWidth="0.5"
+        />
+        <text
+          x="180"
+          y="52"
+          fill="oklch(0.85 0.008 260)"
+          fontSize="7"
+          fontWeight="600"
+          textAnchor="middle"
+          dominantBaseline="middle"
+        >
+          LLM Query
+        </text>
+        <circle
+          cx="150"
+          cy="50"
+          r="6"
+          fill={blue}
+          opacity="0.18"
+          className="motion-safe:animate-[breathe_2s_ease-in-out_infinite]"
+          style={{ transformOrigin: "150px 50px", animationDelay: "0.9s" }}
+        />
+        <circle cx="150" cy="50" r="3" fill={blue} />
+        <circle
+          cx="210"
+          cy="50"
+          r="6"
+          fill={blue}
+          opacity="0.18"
+          className="motion-safe:animate-[breathe_2s_ease-in-out_infinite]"
+          style={{ transformOrigin: "210px 50px", animationDelay: "1.2s" }}
+        />
+        <circle cx="210" cy="50" r="3" fill={blue} />
+
+        {/* Answer node */}
+        <rect
+          x="228"
+          y="34"
+          width="50"
+          height="32"
+          rx="5"
+          fill="oklch(0.155 0.016 260)"
+          stroke="oklch(0.28 0.016 260)"
+          strokeWidth="0.5"
+        />
+        <text
+          x="253"
+          y="52"
+          fill="oklch(0.85 0.008 260)"
+          fontSize="7"
+          fontWeight="600"
+          textAnchor="middle"
+          dominantBaseline="middle"
+        >
+          Answer
+        </text>
+        <circle
+          cx="228"
+          cy="50"
+          r="6"
+          fill={purple}
+          opacity="0.18"
+          className="motion-safe:animate-[breathe_2s_ease-in-out_infinite]"
+          style={{ transformOrigin: "228px 50px", animationDelay: "1.5s" }}
+        />
+        <circle cx="228" cy="50" r="3" fill={purple} />
+
+        {/* --- Flowing connector paths --- */}
+        <path
+          id="rag-path-1"
+          d="M54 50 H72"
+          stroke={blue}
+          strokeWidth="1.5"
+          strokeDasharray="6 4"
+          className="svg-flow-path"
+        />
+        <path
+          id="rag-path-2"
+          d="M132 50 H150"
+          stroke={purple}
+          strokeWidth="1.5"
+          strokeDasharray="6 4"
+          className="svg-flow-path"
+          style={{ animationDelay: "0.4s" }}
+        />
+        <path
+          id="rag-path-3"
+          d="M210 50 H228"
+          stroke={blue}
+          strokeWidth="1.5"
+          strokeDasharray="6 4"
+          className="svg-flow-path"
+          style={{ animationDelay: "0.8s" }}
+        />
+
+        {/* Labels under nodes */}
+        <text
+          x="28"
+          y="76"
+          fill="oklch(0.55 0.01 260)"
+          fontSize="6"
+          textAnchor="middle"
+        >
+          Ingest
+        </text>
+        <text
+          x="102"
+          y="76"
+          fill="oklch(0.55 0.01 260)"
+          fontSize="6"
+          textAnchor="middle"
+        >
+          Embed &amp; Store
+        </text>
+        <text
+          x="180"
+          y="76"
+          fill="oklch(0.55 0.01 260)"
+          fontSize="6"
+          textAnchor="middle"
+        >
+          Retrieve &amp; Rank
+        </text>
+        <text
+          x="253"
+          y="76"
+          fill="oklch(0.55 0.01 260)"
+          fontSize="6"
+          textAnchor="middle"
+        >
+          Generate
+        </text>
+      </svg>
     </div>
   );
 }
@@ -193,7 +399,7 @@ export default function Services() {
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {description}
                   </p>
-                  {ragDiagram && <RAGDiagram color={iconColor} />}
+                  {ragDiagram && <RAGDiagram />}
                 </div>
                 {useCase && (
                   <div className="relative mt-4 pt-4 border-t border-border/30">

@@ -1,27 +1,27 @@
 {
-  "overview": "A modern, high-conversion SaaS technology company website for a tech solutions provider specializing in scalable SaaS applications. Features a hero section, services overview, detailed product showcases (E-commerce, PG Management, Travel), testimonials, tech stack, and contact form — with dark/light mode, glassmorphism cards, and electric blue/purple gradient accents.",
+  "overview": "A modern, high-conversion SaaS technology company website for WebWhistl — a tech solutions provider specializing in scalable SaaS apps, AI/RAG systems, smart chatbots, and digital platforms. Features ngrok-inspired design system with Inter typography, animated SVG data flow diagrams for AI/RAG, e-commerce, and travel use-cases, and a polished single-page experience targeting e-commerce, PG management, and travel businesses.",
   "features": [
-    "Hero section with animated gradient background and dual CTAs",
-    "Services overview with glassmorphism cards",
-    "3 product solution showcases (E-commerce, PG Management, Travel)",
-    "Why Choose Us value props",
-    "Tech stack badge grid",
-    "Testimonials carousel",
-    "Contact form with validation",
+    "ngrok-inspired design system with Inter font and refined neutral palette",
+    "Animated SVG data flow diagrams for AI/RAG, E-commerce, and Travel use-cases",
+    "Single-page SPA with smooth anchor-based navigation",
+    "Sticky header with glass blur and persistent Book a Demo CTA",
     "Dark/light mode toggle",
-    "Fully responsive design",
-    "Smooth scroll animations and micro-interactions"
+    "Tech stack showcase with 30+ icons grouped by category",
+    "Contact form with validation and honeypot spam protection",
+    "Floating Schedule a Call CTA (appears after hero scroll)",
+    "Scroll progress indicator",
+    "Fully responsive design with reduced-motion support"
   ],
-  "category": "marketing-website",
+  "category": "marketing",
   "tags": [
     "saas",
+    "company-website",
     "landing-page",
+    "animated-svg",
+    "ngrok-design",
+    "single-page-app",
     "dark-mode",
-    "glassmorphism",
-    "animations",
-    "responsive",
-    "conversion",
-    "tech-company"
+    "tech-showcase"
   ],
-  "last_updated": "2026-04-28T08:57:12.747Z"
+  "last_updated": "2026-05-12T10:29:26.861Z"
 }

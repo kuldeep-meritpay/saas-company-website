@@ -100,30 +100,37 @@ export default function AboutUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/8 text-primary text-xs font-semibold uppercase tracking-widest mb-6">
+            <span
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-6"
+              style={{
+                border: "1px solid oklch(0.68 0.24 260 / 0.25)",
+                background: "oklch(0.68 0.24 260 / 0.07)",
+                color: "oklch(0.68 0.24 260)",
+              }}
+            >
               Who We Are
             </span>
-            <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-6 leading-tight">
+            <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-6 leading-tight tracking-[-0.02em]">
               A Team That Builds{" "}
               <span
                 className="bg-clip-text text-transparent"
                 style={{
                   backgroundImage:
-                    "linear-gradient(135deg, oklch(0.70 0.24 260), oklch(0.75 0.22 290))",
+                    "linear-gradient(135deg, oklch(0.68 0.24 260), oklch(0.74 0.22 290))",
                 }}
               >
                 What You Actually Need
               </span>
             </h2>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-5">
+            <p className="text-[15px] text-muted-foreground/85 leading-relaxed mb-5">
               Founded in 2020 out of a frustration with bloated off-the-shelf
               software, WebWhistl was built on a simple belief: businesses
               deserve custom-engineered solutions that actually fit their
               operations — not the other way around.
             </p>
 
-            <p className="text-base text-muted-foreground leading-relaxed mb-5">
+            <p className="text-[14px] text-muted-foreground/80 leading-relaxed mb-5">
               Today, we're a 25+ member team of full-stack engineers, AI/ML
               specialists, UX designers, and DevOps engineers with deep domain
               expertise across e-commerce, property management, and travel.
@@ -133,7 +140,7 @@ export default function AboutUs() {
               availability.
             </p>
 
-            <p className="text-base text-muted-foreground leading-relaxed mb-8">
+            <p className="text-[14px] text-muted-foreground/80 leading-relaxed mb-8">
               What makes us different isn't just our tech stack — it's the way
               we work. We move fast without cutting corners, embed ourselves in
               your business context, and own outcomes rather than just
@@ -142,13 +149,13 @@ export default function AboutUs() {
             </p>
 
             <blockquote
-              className="relative pl-6 py-3 my-6 border-l-4 rounded-r-xl"
+              className="relative pl-5 py-3 my-6 border-l-2 rounded-r-lg"
               style={{
-                borderColor: "oklch(0.70 0.24 260)",
-                background: "oklch(0.70 0.24 260 / 0.06)",
+                borderColor: "oklch(0.68 0.24 260)",
+                background: "oklch(0.68 0.24 260 / 0.05)",
               }}
             >
-              <p className="text-base font-semibold italic text-foreground/90">
+              <p className="text-[14px] font-medium italic text-foreground/80 leading-relaxed">
                 &ldquo;We don&rsquo;t build generic software. We build the exact
                 tool your business needs to scale — architected for today,
                 engineered for tomorrow.&rdquo;
@@ -210,12 +217,12 @@ export default function AboutUs() {
                     <Icon size={18} style={{ color }} />
                   </div>
                   <div
-                    className="font-display font-bold text-4xl mb-1"
+                    className="font-display font-bold text-3xl mb-1"
                     style={{ color }}
                   >
                     <AnimatedCounter target={value} suffix={suffix} />
                   </div>
-                  <p className="text-sm text-muted-foreground font-medium">
+                  <p className="text-[12.5px] text-muted-foreground/70 font-medium">
                     {label}
                   </p>
                 </div>
@@ -231,7 +238,7 @@ export default function AboutUs() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="col-span-2 p-6 rounded-2xl border border-border/50 glass-blur"
             >
-              <p className="text-xs font-bold uppercase tracking-widest text-accent/70 mb-4">
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground/60 mb-4">
                 What Drives Us
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -250,10 +257,10 @@ export default function AboutUs() {
                   },
                 ].map(({ title, desc }) => (
                   <div key={title}>
-                    <p className="text-sm font-semibold text-foreground mb-1">
+                    <p className="text-[13.5px] font-semibold text-foreground mb-1">
                       {title}
                     </p>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-[12px] text-muted-foreground/75 leading-relaxed">
                       {desc}
                     </p>
                   </div>

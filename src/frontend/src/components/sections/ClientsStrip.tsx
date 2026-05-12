@@ -106,16 +106,16 @@ function ClientCard({
 }: { name: string; color: string; letter: string }) {
   return (
     <div
-      className="flex-shrink-0 flex items-center gap-3 px-5 py-3 rounded-xl border border-border/40 bg-card/60 backdrop-blur-sm mx-3 select-none"
-      style={{ minWidth: "160px" }}
+      className="flex-shrink-0 flex items-center gap-3 px-4 py-2.5 rounded-lg border border-border/30 bg-card/70 backdrop-blur-sm mx-2.5 select-none"
+      style={{ minWidth: "150px" }}
     >
       <div
-        className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-foreground flex-shrink-0"
-        style={{ background: `linear-gradient(135deg, ${color}, ${color}80)` }}
+        className="w-7 h-7 rounded-md flex items-center justify-center text-[12px] font-bold text-white flex-shrink-0"
+        style={{ background: `linear-gradient(135deg, ${color}, ${color}90)` }}
       >
         {letter}
       </div>
-      <span className="text-sm font-semibold text-foreground/80 whitespace-nowrap">
+      <span className="text-[13px] font-medium text-foreground/75 whitespace-nowrap">
         {name}
       </span>
     </div>
@@ -137,10 +137,10 @@ export default function ClientsStrip() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground/60 mb-2">
             Trusted By
           </p>
-          <h2 className="font-display font-semibold text-2xl text-foreground">
+          <h2 className="font-semibold text-[22px] tracking-tight text-foreground">
             Clients &amp; Partners
           </h2>
         </motion.div>

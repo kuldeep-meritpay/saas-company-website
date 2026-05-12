@@ -520,18 +520,18 @@ function TechBadgeCard({ tech, index }: { tech: TechBadge; index: number }) {
         onFocus={() => setShowTooltip(true)}
         onBlur={() => setShowTooltip(false)}
         aria-label={`${tech.name}: ${tech.description}`}
-        className="group flex w-full flex-col items-center gap-2 p-4 rounded-xl border border-border/50 bg-card/60 hover:border-border hover:shadow-glass hover:scale-105 transition-smooth cursor-default backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+        className="group flex w-full flex-col items-center gap-2 p-3.5 rounded-xl border border-border/40 bg-card/50 hover:border-border/70 hover:bg-card/80 hover:shadow-sm transition-all duration-150 cursor-default backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
       >
         <span
-          className="w-11 h-11 flex items-center justify-center rounded-lg transition-smooth group-hover:scale-110"
+          className="w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-150 group-hover:scale-105"
           style={{
-            background: `${tech.color}18`,
-            border: `1px solid ${tech.color}30`,
+            background: `oklch(from ${tech.color} l c h / 0.1)`,
+            border: `1px solid ${tech.color}28`,
           }}
         >
           {tech.icon}
         </span>
-        <span className="text-xs font-semibold text-foreground/80 text-center leading-tight">
+        <span className="text-[12px] font-medium text-foreground/75 text-center leading-tight">
           {tech.name}
         </span>
       </motion.button>
@@ -584,13 +584,20 @@ export default function TechStack() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/30 bg-accent/8 text-accent text-xs font-semibold uppercase tracking-widest mb-4">
+          <span
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-4"
+            style={{
+              border: "1px solid oklch(0.74 0.22 290 / 0.25)",
+              background: "oklch(0.74 0.22 290 / 0.07)",
+              color: "oklch(0.74 0.22 290)",
+            }}
+          >
             Our Stack
           </span>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-4">
+          <h2 className="font-display font-bold text-4xl sm:text-5xl text-foreground mb-4 tracking-[-0.02em]">
             Technologies We Work With
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
             Modern, proven technologies that are fast, scalable, and
             developer-friendly — from frontend to infrastructure.
           </p>
@@ -606,12 +613,18 @@ export default function TechStack() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: catIdx * 0.05 }}
             >
-              {/* Category label */}
               <div className="flex items-center gap-3 mb-5">
-                <span className="text-xs font-bold uppercase tracking-widest text-accent/80 bg-accent/8 border border-accent/20 px-3 py-1 rounded-full">
+                <span
+                  className="text-[10.5px] font-semibold uppercase tracking-widest px-2.5 py-0.5 rounded-full"
+                  style={{
+                    border: "1px solid oklch(0.74 0.22 290 / 0.2)",
+                    background: "oklch(0.74 0.22 290 / 0.06)",
+                    color: "oklch(0.74 0.22 290 / 0.85)",
+                  }}
+                >
                   {category.label}
                 </span>
-                <div className="flex-1 h-px bg-border/40" />
+                <div className="flex-1 h-px bg-border/30" />
               </div>
 
               {/* Tech badges grid */}
